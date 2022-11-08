@@ -31,9 +31,6 @@ int _printf(const char *format, ...)
 					break;
 				case ' ': case '\0':
 					return (-1);
-				case 'd':
-					_itoa(va_arg(ptr, char *));
-					break;
 				default:
 					i++;
 					continue;
@@ -46,5 +43,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(ptr);
-	return(i);
+	return(count);
 }
