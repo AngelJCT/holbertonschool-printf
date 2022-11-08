@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- *get_string-print given string
+ *get_char-print given string
  *@c: pointer to string
+ *Return: character
  */
 int get_char(char c)
 {
@@ -11,6 +12,7 @@ int get_char(char c)
 /**
  *get_string-find string length
  *@s: pointer to string
+ *Return: string length
  */
 int get_string(char *s)
 {
