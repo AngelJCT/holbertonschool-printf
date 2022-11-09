@@ -9,4 +9,5 @@ int _printf(const char *format, ...);
 int _strlen(char *s);
 int get_string(char *s);
 int get_char(char c);
+int get_integer(int numbers);
 #endif
