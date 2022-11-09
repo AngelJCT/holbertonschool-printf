@@ -18,6 +18,11 @@ int get_string(char *s)
 {
 	int len;
 
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+	}
+
 	len = _strlen(s);
 	write(1, s, len);
 	return (len);
