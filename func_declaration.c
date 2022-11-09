@@ -42,19 +42,20 @@ int get_integer(int numbers)
 
 	if (numbers == 0)
 	{
-		write(1, 0, 1);
+		write(1, "0", 1);
 		return (1);
 	}
 	if (numbers < 0)
 	{
 		write(1, "-", 1);
 		numbers = -1 * numbers;
-		isNegative++;
+		isNegative = 1;
 	}
-	for (i = 9; numbers; i--)
+	for (i = 9; numbers;)
 	{
 		int_string[i] = '0' + (numbers % 10);
 		numbers = numbers / 10;
+		i--;
 	}
 	i++;
 	d_cnt = d_limit - i;
