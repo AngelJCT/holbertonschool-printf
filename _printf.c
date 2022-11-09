@@ -34,9 +34,7 @@ int _printf(const char *format, ...)
 					cnt += get_integer(va_arg(ptr, int));
 					break;
 				default:
-					i--;
-					write(1, &format[i], 1);
-					cnt++;
+					cnt += write(1, &format[--i], 1);
 			}
 		}
 		else
