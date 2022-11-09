@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
 				default:
 					i--;
 					write(1, &format[i], 1);
+					cnt++;
 			}
 		}
 		else
