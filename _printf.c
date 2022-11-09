@@ -28,6 +28,9 @@ int _printf(const char *format, ...)
 					write(1, &format[i], 1);
 					cnt++;
 					break;
+				case 'd': case 'i':
+					cnt += get_integer(va_arg(ptr, int));
+					break;
 				case ' ': case '\0':
 					return (-1);
 			}
