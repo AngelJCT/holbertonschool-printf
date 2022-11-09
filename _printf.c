@@ -24,6 +24,9 @@ int _printf(const char *format, ...)
 				case 's':
 					cnt += get_string(va_arg(ptr, char *));
 					break;
+				case 'i': case 'd':
+					cnt += get_integer(va_arg(ptr, int));
+					break;
 				case '%':
 					write(1, &format[i], 1);
 					cnt++;

@@ -38,7 +38,11 @@ int get_integer(int numbers)
 	if (numbers == 0)
 	{
 		write(1, 0, 1);
+<<<<<<< HEAD
 		return (1);
+=======
+		return(1);
+>>>>>>> fd23e735318250940be102ef3c220ff1c2d0e04b
 	}
 	if (numbers < 0)
 	{
@@ -56,3 +60,7 @@ int get_integer(int numbers)
 	write(1, &int_string[i], d_cnt);
 	return (isNegative + d_cnt);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd23e735318250940be102ef3c220ff1c2d0e04b
