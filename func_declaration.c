@@ -35,10 +35,10 @@ int get_string(char *s)
  */
 int get_integer(int numbers)
 {
-	char int_string[] = "          ";
+	char int_string[] = "           ";
 	int i;
-	int d_limit = 10;
-	int isNegative = 0;
+	int d_limit = 11;
+	int num_duplicate = numbers;
 	int d_cnt;
 
 	if (numbers == 0)
@@ -46,20 +46,25 @@ int get_integer(int numbers)
 		write(1, "0", 1);
 		return (1);
 	}
-	if (numbers < 0)
+	for (i = 10; numbers != 0; i--)
 	{
-		write(1, "-", 1);
-		numbers = -1 * numbers;
-		isNegative = 1;
-	}
-	for (i = 9; numbers;)
-	{
-		int_string[i] = '0' + (numbers % 10);
+		int digit = numbers % 10;
+		if (digit < 0)
+		{
+			digit = -1 * digit;
+		}
+		int_string[i] = '0' + digit;
 		numbers = numbers / 10;
-		i--;
 	}
-	i++;
+	if (num_duplicate < 0)
+	{
+		int_string[i] = '-';
+	}
+	else
+	{
+		i++;
+	}
 	d_cnt = d_limit - i;
 	write(1, &int_string[i], d_cnt);
-	return (isNegative + d_cnt);
+	return (d_cnt);
 }
