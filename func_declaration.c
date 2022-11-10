@@ -18,13 +18,19 @@ int get_string(char *s)
 {
 	int len;
 
+	if (s == NULL)
+	{
+		write(1, "(null)", 6);
+	}
+
 	len = _strlen(s);
 	write(1, s, len);
 	return (len);
 }
 /**
- *
- *
+ *get_integer-print integers for format specifier
+ *@numbers: integers
+ *Return: numbers amount
  */
 int get_integer(int numbers)
 {
@@ -36,23 +42,23 @@ int get_integer(int numbers)
 
 	if (numbers == 0)
 	{
-		write(1, 0, 1);
-		return(1);
+		write(1, "0", 1);
+		return (1);
 	}
 	if (numbers < 0)
 	{
 		write(1, "-", 1);
 		numbers = -1 * numbers;
-		isNegative++;
+		isNegative = 1;
 	}
-	for (i = 9; numbers; i--)
+	for (i = 9; numbers;)
 	{
 		int_string[i] = '0' + (numbers % 10);
 		numbers = numbers / 10;
+		i--;
 	}
 	i++;
 	d_cnt = d_limit - i;
 	write(1, &int_string[i], d_cnt);
 	return (isNegative + d_cnt);
 }
-

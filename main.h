@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdlib.h>
 int _printf(const char *format, ...);
 int _strlen(char *s);
 int get_string(char *s);

@@ -11,6 +11,8 @@ int _printf(const char *format, ...)
 	va_list ptr;
 
 	va_start(ptr, format);
+	if (format == NULL)
+		return (-1);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -24,15 +26,15 @@ int _printf(const char *format, ...)
 				case 's':
 					cnt += get_string(va_arg(ptr, char *));
 					break;
-				case 'i': case 'd':
-					cnt += get_integer(va_arg(ptr, int));
-					break;
 				case '%':
 					write(1, &format[i], 1);
 					cnt++;
 					break;
-				case ' ': case '\0':
-					return (-1);
+				case 'd': case 'i':
+					cnt += get_integer(va_arg(ptr, int));
+					break;
+				default:
+					cnt += write(1, &format[--i], 1);
 			}
 		}
 		else
