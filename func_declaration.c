@@ -21,6 +21,7 @@ int get_string(char *s)
 	if (s == NULL)
 	{
 		write(1, "(null)", 6);
+		return (6);
 	}
 
 	len = _strlen(s);
