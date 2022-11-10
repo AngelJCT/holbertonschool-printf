@@ -28,20 +28,20 @@ int _printf(const char *format, ...)
 					cnt += get_string(va_arg(ptr, char *));
 					break;
 				case '%':
-					write(1, &format[i], 1);
-					cnt++;
+					cnt += write(1, &format[i], 1);
 					break;
 				case 'd': case 'i':
 					cnt += get_integer(va_arg(ptr, int));
 					break;
+				case '\0':
+					return (-1);
 				default:
 					cnt += write(1, &format[--i], 1);
 			}
 		}
 		else
 		{
-			write(1, &format[i], 1);
-			cnt++;
+			cnt += write(1, &format[i], 1);
 		}
 		i++;
 	}
