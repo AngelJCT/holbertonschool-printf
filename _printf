@@ -32,6 +32,19 @@ The '%' indicates the fucntion to print the type of the character next to it, th
 .SH OPTIONS
 .PP
 The nuseradd does not take any options. However, you can supply username.
+.SH Examples
+.PP
+void  main()
+
+{ 
+
+	int a = 10;
+
+	_printf("%d", a);
+
+}
+
+return will be 10.
 .SH BUGS
 No known bugs.
 .SH AUTHOR
