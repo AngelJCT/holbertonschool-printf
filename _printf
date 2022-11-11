@@ -1,0 +1,58 @@
+.\" Manpage for nuseradd.
+.\" Contact vivek@nixcraft.net.in to correct errors or typos.
+.TH printf 3 "06 May 2010" "1.0" "_printf man page"
+.SH NAME
+_printf function 
+.SH SYNOPSIS
+#include "main.h"
+
+int _printf(const char *format, ...);
+
+_printf("%CONVERSION", VARIABLE);
+
+_printf("STRING");
+
+.SH DESCRIPTION
+.PP
+The _printf fucntion is a costumize function  from printf() writes output to stdout,
+the standar output stream.
+.PP
+This costumize _printf() acts the same as the regular printf() where it outputs a fomart string that is specifies by subsequent argument that are converted for standar output.
+.SH Conversion specifiers
+.PP
+Characters that specifies the type of cenversions to applied. The conversions pecifiers for the costimize _printf() are:
+.PP
+.SH d, i:
+.PP
+The int argumet is converted to a sing decimal. the default precision is set to 1.
+.PP
+.SH s:
+.PP
+The S arguent is expected to be a pointer to an array and returns the and array of characters as a string.
+.SH c:
+.PP
+The C arguments converts the int argument to a unsigned char, and the resulting charcacter is written.
+.SH %:
+The '%' indicates the fucntion to print the type of the character next to it, the complete conversion specification '%%'.
+.SH OPTIONS
+.PP
+The nuseradd does not take any options. However, you can supply username.
+.SH Examples
+.PP
+void  main()
+
+{ 
+
+	int a = 10;
+
+	_printf("%d", a);
+
+}
+
+return will be 10.
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Yahdiel Saldana yahdiel.saldana@holbertonstudent.com
+
+Angel Carrion angel.carrion@holbertonstudent.com
