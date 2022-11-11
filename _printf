@@ -7,6 +7,11 @@ _printf function
 #include "main.h"
 
 int _printf(const char *format, ...);
+
+_printf("%CONVERSION", VARIABLE);
+
+_printf("STRING");
+
 .SH DESCRIPTION
 .PP
 The _printf fucntion is a costumize function  from printf() writes output to stdout,
@@ -48,4 +53,6 @@ return will be 10.
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Yahdiel Saldana & Angel Carrion
+Yahdiel Saldana yahdiel.saldana@holbertonstudent.com
+
+Angel Carrion angel.carrion@holbertonstudent.com
